@@ -1,0 +1,25 @@
+{	"noOfSuns":1,
+	"sunData":[
+	 	{	"x":0,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":true,
+	 		"absorbs":false
+	 	}
+	 ],
+
+	 "noOfPlanets":10,
+	 "planetData":[
+	 	{	"x":0,"xArgList":[],
+	 		"y":"func1","yArgList":["y",0,30,20],
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"func2","vXArgList":[0,1],
+	 		"vY":0,"vYArgList":[]
+	 	}
+	 ],
+	 "planetGravity":false
+} 

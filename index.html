@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>2D Gravity Simulation - Game Dolphin</title>
+	<script src="phaser.min.js"></script>
+	<script src="stats.min.js"></script>
+	<script src="Boot.js"></script>
+</head>
+<body style="margin:0px;">
+
+<div id="gameContainer"></div>
+
+<div id="extras" style="position:absolute;right:0px;top:0px;">
+<input type="file" id="file" name="file" onchange="startRead()" style="color: white;"/>
+<select id="buttons" name="buttons"></select>
+<button onclick="toggle()">Toggle Planet Paths</button>
+<button onclick="rel()">Restart</button>
+</div>
+<div id="stts" style="position:absolute;left:0px;top:0px;"></div>
+
+<script type="text/javascript">
+
+window.onload = function() {
+
+	var game = new Phaser.Game(window.innerWidth*window.devicePixelRatio, window.innerHeight*window.devicePixelRatio, Phaser.AUTO, 'gameContainer');
+
+	game.state.add('BasicSim', BasicSim,true);
+
+	game.state.start('BasicSim');
+
+	stats = new Stats();
+	stats.setMode( 0 );
+
+	var tt = document.getElementById('stts');
+	tt.appendChild( stats.domElement );
+};
+
+function toggle(){
+	bmd.clear();
+	if(bck.alive){
+		bck.kill();
+	}
+	else
+		bck.reset(0,0);
+}
+
+function rel(){
+	location.reload(true);
+}
+
+
+function startRead(evt){
+	var file = document.getElementById('file').files[0];
+    if (file) {
+    	var reader = new FileReader();
+    	reader.readAsText(file, "UTF-8");
+    	reader.onload = loadedFile;
+    }
+}
+
+function loadedFile(evt){
+	var newF;
+	
+	if(tryParseJSON(evt.target.result)){
+		newF = evt.target.result;
+		localStorage.setItem("newF",newF);
+		localStorage.setItem("FN",'readFromLocal');
+		location.reload(true);
+	}
+}
+
+function tryParseJSON (jsonString){
+    try {
+        var o = JSON.parse(jsonString);
+
+        // Handle non-exception-throwing cases:
+        // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
+        // but... JSON.parse(null) returns 'null', and typeof null === "object", 
+        // so we must check for that, too.
+        if (o && typeof o === "object" && o !== null) {
+            return o;
+        }
+    }
+    catch (e) {
+    	alert("NOT VALID JSON!");
+     }
+
+    return false;
+};
+</script>
+
+</body>
+</html>

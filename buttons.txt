@@ -1,0 +1,19 @@
+{
+	"list"	:	[
+		{	"name"	:	"Random",
+			"fn"	:	"E1.txt"
+		},
+		{	"name"	:	"Circular Orbits",
+			"fn"	:	"E2.txt"
+		},
+		{	"name"	:	"2 Stars",
+			"fn"	:	"E3.txt"
+		},
+		{	"name"	:	"Binary System",
+			"fn"	:	"E4.txt"
+		},
+		{	"name"	:	"500 Planets",
+			"fn"	:	"E5.txt"
+		}
+	]
+} 

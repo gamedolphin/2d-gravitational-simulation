@@ -1,0 +1,192 @@
+This is a compendium of the files that form the list of initial conditions 
+required to start the simulations at gamedolph.in/experimentlist/2d-gravitational-systems.
+The actual files are JSON files with different names.
+
+RANDOM
+
+{	"noOfSuns":1,
+	"sunData":[
+	 	{	"x":0,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":true,
+	 		"absorbs":false
+	 	}
+	 ],
+
+	 "noOfPlanets":100,
+	 "planetData":[
+	 	{	"x":"rnd","xArgList":"width",
+	 		"y":"rnd","yArgList":"height",
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"rnd","vXArgList":[-30,30],
+	 		"vY":"rnd","vYArgList":[-20,20]
+	 	}
+	 ],
+	 "planetGravity":false
+} 
+
+CIRCULAR ORBITS
+
+{	"noOfSuns":1,
+	"sunData":[
+	 	{	"x":0,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":true,
+	 		"absorbs":false
+	 	}
+	 ],
+
+	 "noOfPlanets":10,
+	 "planetData":[
+	 	{	"x":0,"xArgList":[],
+	 		"y":"func1","yArgList":["y",0,30,20],
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"func2","vXArgList":[0,1],
+	 		"vY":0,"vYArgList":[]
+	 	}
+	 ],
+	 "planetGravity":false
+} 
+
+2 STARS
+
+{	"noOfSuns":2,
+	"sunData":[
+	 	{	"x":-100,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":false,
+	 		"absorbs":false
+	 	},
+	 	{	"x":150,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":false,
+	 		"absorbs":false
+	 	}
+	 ],
+
+	 "noOfPlanets":4,
+	 "planetData":[
+	 	{	"x":200,"xArgList":"width",
+	 		"y":200,"yArgList":"height",
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"rnd","vXArgList":[-30,30],
+	 		"vY":"rnd","vYArgList":[-20,20]
+	 	},
+	 	{	"x":-200,"xArgList":"width",
+	 		"y":200,"yArgList":"height",
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"rnd","vXArgList":[-30,30],
+	 		"vY":"rnd","vYArgList":[-20,20]
+	 	},
+	 	{	"x":-200,"xArgList":"width",
+	 		"y":-200,"yArgList":"height",
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"rnd","vXArgList":[-30,30],
+	 		"vY":"rnd","vYArgList":[-20,20]
+	 	},
+	 	{	"x":200,"xArgList":"width",
+	 		"y":-200,"yArgList":"height",
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":"rnd","vXArgList":[-30,30],
+	 		"vY":"rnd","vYArgList":[-20,20]
+	 	}
+	 ],
+	 "planetGravity":false
+} 
+
+BINARY SYSTEM
+
+{	"noOfSuns":0,
+	"sunData":[
+	 	{	"x":-100,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":false,
+	 		"absorbs":false
+	 	},
+	 	{	"x":150,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":false,
+	 		"absorbs":false
+	 	}
+	 ],
+
+	 "noOfPlanets":2,
+	 "planetData":[
+	 	{	"x":-100,"xArgList":[],
+	 		"y":0,"yArgList":["y",0,100,0],
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":500,"mArgList":"radius",
+	 		"vX":10,"vXArgList":[0,1],
+	 		"vY":-10,"vYArgList":[0,1]
+	 	},
+	 	{	"x":100,"xArgList":[],
+	 		"y":0,"yArgList":["y",0,100,0],
+	 		"radius":"rnd","rArgList":[2,6],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":500,"mArgList":"radius",
+	 		"vX":-10,"vXArgList":[0,1],
+	 		"vY":10,"vYArgList":[0,1]
+	 	}
+
+	 ],
+	 "planetGravity":true
+} 
+
+500 PLANETS
+
+{	"noOfSuns":0,
+	"sunData":[
+	 	{	"x":0,"xArgList":[],
+	 		"y":0,"yArgList":[],
+	 		"radius":20,
+	 		"color":16776960,
+	 		"mass":10000,
+	 		"devours":true,
+	 		"absorbs":false
+	 	}
+	 ],
+
+	 "noOfPlanets":500,
+	 "planetData":[
+	 	{	"x":"rnd","xArgList":"width",
+	 		"y":"rnd","yArgList":"height",
+	 		"radius":"rnd","rArgList":[1,3],
+	 		"color":"rnd","cArgList":"allColors",
+	 		"mass":"equals10","mArgList":"radius",
+	 		"vX":0,"vXArgList":[-30,30],
+	 		"vY":0,"vYArgList":[-20,20]
+	 	}
+	 ],
+	 "planetGravity":true
+} 
